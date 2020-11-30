@@ -7,9 +7,19 @@ for (var i = 0; i < numberofButtons; i++) {
 
 function handleClick() {
     var buttonPressed = this.innerHTML;
-    
-    switch (buttonPressed) {
-      case "w":
+    makeSound(buttonPressed);
+}
+
+
+// makes the keyboard click listen to the key pressed and checks which key was pressed.
+document.addEventListener("keydown", function keySound(event){ makeSound(event.key)});
+
+
+// function that makes sound.
+function makeSound(key) {
+    buttonAnimation(key);
+    switch (key) {
+      case "f":
         var audio = new Audio("sounds/tom-1.mp3");
         audio.play();
         break;
@@ -41,4 +51,15 @@ function handleClick() {
         console.log(this);
         break;
     }
+}
+
+
+
+function buttonAnimation(currentKey) {
+    var actbutton = document.querySelector("."+currentKey);
+    actbutton.classList.add("pressed");
+
+    setTimeout(function () {
+        actbutton.classList.remove("pressed");
+    }, 100);
 }

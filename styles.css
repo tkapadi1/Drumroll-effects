@@ -16,10 +16,6 @@ footer {
   font-family: sans-serif;
 }
 
-.w {
-  background-image: url("images/tom1.png");
-  color: white;
-}
 
 .a {
   background-image: url("images/tom2.png");
@@ -33,6 +29,11 @@ footer {
 
 .d {
   background-image: url("images/tom4.png");
+  color: white;
+}
+
+.f {
+  background-image: url("images/tom1.png");
   color: white;
 }
 
